@@ -1,5 +1,11 @@
-template-repository (1.0-1) unstable; urgency=medium
+node-to-buffer (1.2.1+~cs4.3.9-2) unstable; urgency=medium
 
-  * Initial release
+  * Source-only upload
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Yadd <yadd@debian.org>  Sun, 14 Sep 2025 18:15:38 +0200
+
+node-to-buffer (1.2.1+~cs4.3.9-1) unstable; urgency=medium
+
+  * Initial release (Closes: #1111813)
+
+ -- Yadd <yadd@debian.org>  Fri, 22 Aug 2025 12:33:54 +0200

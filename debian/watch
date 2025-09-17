@@ -1,0 +1,35 @@
+Version: 5
+Version-Schema: checksum
+
+Template: Github
+Dversionmangle: auto
+Owner: browserify
+Project: to-buffer
+
+Component: call-bind-apply-helpers
+Ctype: nodejs
+Template: Github
+Owner: ljharb
+Project: call-bind-apply-helpers
+
+
+Component: call-bound
+Ctype: nodejs
+Template: Github
+Owner: ljharb
+Project: call-bound
+
+
+Component: es-errors
+Ctype: nodejs
+Template: Github
+Owner: ljharb
+Project: es-errors
+
+
+Component: typed-array-buffer
+Ctype: nodejs
+Template: Github
+Owner: inspect-js
+Project: typed-array-buffer
+

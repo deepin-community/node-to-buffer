@@ -1,15 +1,65 @@
-Source: template-repository
-Section: unknown
+Source: node-to-buffer
+Section: javascript
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Yadd <yadd@debian.org>
+Testsuite: autopkgtest-pkg-nodejs
+Build-Depends:
+ debhelper-compat (= 13)
+ , dh-sequence-nodejs
+ , dh-nodejs (>= 0.16.0~)
+ , node-deep-equal <!nocheck>
+ , node-function-bind <!nocheck>
+ , node-isarray <!nocheck>
+ , node-safe-buffer <!nocheck>
+ , node-tape <!nocheck>
+Standards-Version: 4.7.2
+Homepage: https://github.com/browserify/to-buffer
+Vcs-Git: https://salsa.debian.org/js-team/node-to-buffer.git
+Vcs-Browser: https://salsa.debian.org/js-team/node-to-buffer
+Rules-Requires-Root: no
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: node-call-bind-apply-helpers
+Architecture: all
+Depends: ${misc:Depends}
+ , node-es-errors
+ , node-function-bind
+Description: Helper functions around Function call/apply/bind
+ node-call-bind-apply-helpers is a helper to be used use in node-call-bind or
+ node-get-intrinsic.
+
+Package: node-call-bound
+Architecture: all
+Depends: ${misc:Depends}
+ , node-call-bind-apply-helpers
+ , node-get-intrinsic
+Description: Robust call-bound JavaScript intrinsics, using `call-bind` and `get-intrinsic`
+ node-call-bound is a rRobust call-bound JavaScript intrinsics. To be used in
+ node-call-bind.
+
+Package: node-es-errors
+Architecture: all
+Depends: ${misc:Depends}
+Description: Simple cache for a few of the JS Error constructors
+ node-es-errors is a simple cache for a few of the JS Error constructors.
+
+Package: node-typed-array-buffer
+Architecture: all
+Depends: ${misc:Depends}
+ , node-call-bound
+ , node-es-errors
+ , node-is-typed-array
+Description: Get the ArrayBuffer out of a TypedArray
+ node-typed-array-buffer permits one to get the ArrayBuffer out of a TypedArray
+ robustly.
+
+Package: node-to-buffer
+Architecture: all
+Depends:
+ ${misc:Depends}
+ , node-isarray
+ , node-safe-buffer
+ , node-typed-array-buffer
+Description: Nodejs library to get a buffer robustly from various variable types
+ node-to-buffer permits one to get a buffer robustly from a string, an array,
+ a buffer, a dataview or an Uint8Array.
